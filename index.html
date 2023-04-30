@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elliot Ayd'n - Generative Plotter Drawings</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="logo-container">
+        <h2><a href="index.html" class="logo-link">ELLIOT MCDONALD</a></h2>
+        <p>GENERATIVE ART</p>
+    </div>
+    <header class="homepage-header">
+      <nav>
+        <ul>
+          <li><a href="#artworks-section">SHOP</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+      </nav>
+      <div class="canvas-intro-container" id="canvas-intro-container">
+    </div>
+    </header>
+    <main>
+        <div id="artworks-section">
+            <section class="intro">
+                <h1>One-of-One Original Drawings</h1>
+                <h2>Generative Plotter Drawing</h2>
+             </section>
+             <div class="artwork-carousel">
+                <div class="artwork" id="product1">
+                    <img src="spir_blu.jpeg" alt="Product 1">
+                    <h3>‘spir69_lblu_23_0427’</h3>
+                    <p>1 of 1 Unique and Original Generative Drawing</p>
+                    <p class="modal-dimensions">Dimensions: 29.7cm x 42cm </p>
+                    <p class="modal-price">Price: $100</p>
+                    <button onclick="window.open('https://www.etsy.com/listing/1472303579/1-of-1-unique-and-original-generative?click_key=05b1fbecac28db439f7144cf411709757e712732%3A1472303579&click_sum=8cb0562e&ref=shop_home_active_1&frs=1', '_blank')" class="add-to-cart" data-product-id="1">View on Etsy</button>
+                </div>
+                <div class="artwork" id="product2">
+                    <img src="path/to/product1-image.jpg" alt="Product 2">
+                    <h3>Product 2 Title</h3>
+                    <p>Product 2 Description</p>
+                    <p class="modal-price">Price: $100</p>
+                    <p class="modal-dimensions">Dimensions: 29.7cm x 42cm </p>
+                    <button class="add-to-cart" data-product-id="2">View on Etsy</button>
+                </div>
+                <div class="artwork" id="product3">
+                    <img src="path/to/product1-image.jpg" alt="Product 3">
+                    <h3>Product 3 Title</h3>
+                    <p>Product 3 Description</p>
+                    <p class="modal-price">Price: $100</p>
+                    <p class="modal-dimensions">Dimensions: 29.7cm x 42cm </p>
+                    <button class="add-to-cart" data-product-id="3">View on Etsy</button>
+                </div>
+                <div class="artwork" id="product4">
+                    <img src="path/to/product1-image.jpg" alt="Product 4">
+                    <h3>Product 4 Title</h3>
+                    <p>Product 4 Description</p>
+                    <p class="modal-price">Price: $100</p>
+                    <p class="modal-dimensions">Dimensions: 29.7cm x 42cm </p>
+                    <button class="add-to-cart" data-product-id="4">View on Etsy</button>
+                </div>
+                <div class="artwork" id="product5">
+                    <img src="path/to/product1-image.jpg" alt="Product 5">
+                    <h3>Product 5 Title</h3>
+                    <p>Product 5 Description</p>
+                    <p class="modal-price">Price: $100</p>
+                    <p class="modal-dimensions">Dimensions: 29.7cm x 42cm </p>
+                    <button class="add-to-cart" data-product-id="5">View on Etsy</button>
+                </div>
+            </div>
+        </div>
+      </main>
+    <footer>
+        <p>&copy; 2023 Elliot Ayd'n. All rights reserved.</p>
+    </footer>
+    <script src="sketch.js"></script>
+    <script src="scroll-effects.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <img id="modal-image" src="" alt="Product Image">
+          <h3 id="modal-title">Product Title</h3>
+          <p id="modal-description">Product Description</p>
+          <p class="modal-price">Price: $100</p>
+          <p class="modal-dimensions">Dimensions: 29.7cm x 42cm </p>
+        </div>
+      </div>
+      <script>
+        const artworks = document.querySelectorAll(".artwork");
+        const modal = document.getElementById("modal");
+        const modalImage = document.getElementById("modal-image");
+        const modalTitle = document.getElementById("modal-title");
+        const modalDescription = document.getElementById("modal-description");
+        const closeModal = document.querySelector(".close");
+      
+        artworks.forEach(artwork => {
+          artwork.addEventListener("click", function () {
+            modal.style.display = "block";
+            modalImage.src = this.querySelector("img").src;
+            modalTitle.textContent = this.querySelector("h3").textContent;
+            modalDescription.textContent = this.querySelector("p").textContent;
+          });
+        });
+      
+        closeModal.addEventListener("click", function () {
+          modal.style.display = "none";
+        });
+      
+        window.addEventListener("click", function (event) {
+          if (event.target === modal) {
+            modal.style.display = "none";
+          }
+        });
+      </script>      
+      <script src="cart.js"></script>
+      <script src="shop.js"></script>
+
+
+</body>
+</html>
