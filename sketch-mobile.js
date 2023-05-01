@@ -10,7 +10,7 @@ function setup() {
 }
 
 function draw() {
-  background(0, 300); // translucent background (creates trails)
+  background(0, 30); // translucent background (creates trails)
 
   // make a x and y grid of ellipses
   for (let x = 0; x <= width; x = x + 30) {
