@@ -9,10 +9,14 @@ body {
   min-height: 100vh;
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
-/* Set the width of all elements to 100% of the viewport width */
-* {
-  box-sizing: border-box;
-  max-width: 100%;
+
+@media screen and (max-width: 767px) {
+  body {
+    background-size: 100% auto !important;
+    background-attachment: fixed !important;
+  }
+}
+
 }
 .homepage-header {
     width: 100%;
