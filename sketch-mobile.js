@@ -6,7 +6,7 @@ function setup() {
   myCanvas.parent('canvas-intro-container');
   noStroke();
   fill(255);
-  circleSize = min(windowWidth, windowHeight) * 1.9;
+  circleSize = min(windowWidth, windowHeight) * 0.9;
 }
 
 function draw() {
@@ -36,7 +36,3 @@ function draw() {
   t = t + 0.01; // update time
 }
 
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-  circleSize = min(windowWidth, windowHeight) * 0.9;
-}
