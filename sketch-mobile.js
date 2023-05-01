@@ -16,8 +16,8 @@ function draw() {
   for (let x = 0; x <= width; x = x + 30) {
     for (let y = 0; y <= height; y = y + 30) {
       // starting point of each circle depends on scroll position
-      const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
-      const xAngle = map(scrollPos, 0, width, -4 * PI, 4 * PI, true);
+      const scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      const xAngle = map(scrollPos, 0, height, -4 * PI, 4 * PI, true);
       const yAngle = map(scrollPos, 0, height, -4 * PI, 4 * PI, true);
       // and also varies based on the particle's location
       const angle = xAngle * (x / width) + yAngle * (y / height);
@@ -38,5 +38,5 @@ function draw() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
-  circleSize = min(windowWidth, windowHeight) * 0.6;
+  circleSize = min(windowWidth, windowHeight) * 0.9;
 }
