@@ -1,12 +1,11 @@
 let t = 0; // time variable
-let circleSize;
+let circleSize = 300; // fixed circle size for desktop devices
 
 function setup() {
   const myCanvas = createCanvas(windowWidth, windowHeight);
   myCanvas.parent('canvas-intro-container');
   noStroke();
   fill(255);
-  circleSize = min(windowWidth, windowHeight) * 0.9;
 }
 
 function draw() {
@@ -33,9 +32,4 @@ function draw() {
   }
 
   t = t + 0.01; // update time
-}
-
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-  circleSize = min(windowWidth, windowHeight) * 0.6;
 }
