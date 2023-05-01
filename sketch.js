@@ -1,5 +1,5 @@
 let t = 0; // time variable
-let circleSize = 300; // fixed circle size for desktop devices
+let circleSize = 600; // fixed circle size for desktop devices
 
 function setup() {
   const myCanvas = createCanvas(windowWidth, windowHeight);
