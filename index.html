@@ -89,21 +89,7 @@
       </main>
     <footer>
         <p>&copy; 2023 Elliot Ayd'n. All rights reserved.</p>
-    </footer>
-    <script>
-        function loadScript(url) {
-          const script = document.createElement('script');
-          script.src = url;
-          document.body.appendChild(script);
-        }
-      
-        const isMobile = /Mobi|Android/i.test(navigator.userAgent);
-        if (isMobile) {
-          loadScript('sketch-mobile.js');
-        } else {
-          loadScript('sketch.js');
-        }
-      </script>      
+    </footer>     
     <script src="scroll-effects.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <div id="modal" class="modal">
@@ -145,7 +131,6 @@
       </script>      
       <script src="cart.js"></script>
       <script src="shop.js"></script>
-
-
+      <script src="load-sketch.js"></script>
 </body>
 </html>
