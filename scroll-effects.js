@@ -1,7 +1,8 @@
 $(document).ready(function () {
   const artworksSection = $("#artworks-section");
   const menuLinks = $("nav a");
-  const carouselElements = $(".artwork-carousel *");
+  const carouselElements = $(".product-card");
+  const etsyButton = $(".open-etsy");
 
   $(window).on("scroll", function () {
     const scrollPosition = $(window).scrollTop();
@@ -45,22 +46,24 @@ $(document).ready(function () {
     // Update carousel element colors
     carouselElements.css("background-color", newBgColor);
     carouselElements.css("color", newTextColor);
-    $(".artwork-carousel img").css(
+    $(".product-card img").css(
       "opacity",
       0 + 0.8 * progress
     ); // Set the image opacity based on the progress
-  });
 
-  // Initialize carousel
-  $(".artwork-carousel").slick({
-    dots: false,
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    prevArrow:
-      "<button type='button' class='slick-prev' style='left: 0px;'>&lt;</button>",
-    nextArrow:
-      "<button type='button' class='slick-next' style='right: 0px;'>&gt;</button>",
+    // Update Etsy button colors
+    etsyButton.css("color", newTextColor);
+    etsyButton.css("border-color", newTextColor);
+    etsyButton.hover(
+      function () {
+        $(this).css("color", newBgColor);
+        $(this).css("background-color", newTextColor);
+      },
+      function () {
+        $(this).css("color", newTextColor);
+        $(this).css("background-color", "transparent");
+      }
+    );
   });
 
   // Scroll to artworks section smoothly when the shop button is clicked
