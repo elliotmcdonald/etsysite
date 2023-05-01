@@ -1,12 +1,18 @@
 body {
-    font-family: 'Rajdhani', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #000000;
-    color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  font-family: 'Rajdhani', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+/* Set the width of all elements to 100% of the viewport width */
+* {
+  box-sizing: border-box;
+  max-width: 100%;
 }
 .homepage-header {
     width: 100%;
