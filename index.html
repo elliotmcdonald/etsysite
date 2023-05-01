@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
     <script src="https://js.stripe.com/v3/"></script>
@@ -28,7 +26,6 @@
         <p>GENERATIVE ART</p>
     </div>
     <header class="homepage-header">
-      <div class="nav-container"></div>
         <nav>
           <ul>
             <li><a href="#artworks-section">SHOP</a></li>
@@ -36,111 +33,26 @@
             <li><a href="contact.html">CONTACT</a></li>
          </ul>
         </nav>
-      </div>
-      </header>
-      <div class="canvas-intro-container" id="canvas-intro-container">
-    </div>
+      <div class="canvas-intro-container" id="canvas-intro-container"></div>
     </header>
     <main>
-        <div id="artworks-section">
-            <section class="intro">
-                <h1>One-of-One Original Drawings</h1>
-                <h2>Generative Plotter Drawing</h2>
-             </section>
-             <div class="artwork-carousel">
-                <div class="artwork" id="product1">
-                    <img src="spir_blu.jpeg" alt="Product 1">
-                    <h3>Product 1 Title</h3>
-                    <p>Product 1 Description</p>
-                    <p class="modal-price">Price: $100</p>
-                    <p class="modal-dimensions">Dimensions: 29.7cm x 42cm </p>
-                    <button class="add-to-cart" data-product-id="1">Add to Cart</button>
-                    <button class="buy-now" data-product-id="1">Buy Now</button>
-                </div>
-                <div class="artwork" id="product2">
-                    <img src="path/to/product1-image.jpg" alt="Product 2">
-                    <h3>Product 2 Title</h3>
-                    <p>Product 2 Description</p>
-                    <p class="modal-price">Price: $100</p>
-                    <p class="modal-dimensions">Dimensions: 29.7cm x 42cm </p>
-                    <button class="add-to-cart" data-product-id="2">Add to Cart</button>
-                    <button class="buy-now" data-product-id="2">Buy Now</button>
-                </div>
-                <div class="artwork" id="product3">
-                    <img src="path/to/product1-image.jpg" alt="Product 3">
-                    <h3>Product 3 Title</h3>
-                    <p>Product 3 Description</p>
-                    <p class="modal-price">Price: $100</p>
-                    <p class="modal-dimensions">Dimensions: 29.7cm x 42cm </p>
-                    <button class="add-to-cart" data-product-id="3">Add to Cart</button>
-                    <button class="buy-now" data-product-id="3">Buy Now</button>
-                </div>
-                <div class="artwork" id="product4">
-                    <img src="path/to/product1-image.jpg" alt="Product 4">
-                    <h3>Product 4 Title</h3>
-                    <p>Product 4 Description</p>
-                    <p class="modal-price">Price: $100</p>
-                    <p class="modal-dimensions">Dimensions: 29.7cm x 42cm </p>
-                    <button class="add-to-cart" data-product-id="4">Add to Cart</button>
-                    <button class="buy-now" data-product-id="4">Buy Now</button>
-                </div>
-                <div class="artwork" id="product5">
-                    <img src="path/to/product1-image.jpg" alt="Product 5">
-                    <h3>Product 5 Title</h3>
-                    <p>Product 5 Description</p>
-                    <p class="modal-price">Price: $100</p>
-                    <p class="modal-dimensions">Dimensions: 29.7cm x 42cm </p>
-                    <button class="add-to-cart" data-product-id="5">Add to Cart</button>
-                    <button class="buy-now" data-product-id="5">Buy Now</button>
-                </div>
-            </div>
-            <button onclick="checkout()">Checkout</button>
-        </div>
-      </main>
+      <div id="artworks-section">
+          <section class="intro">
+              <h1>One-of-One Original Drawings</h1>
+              <h2>Generative Plotter Drawing</h2>
+           </section>
+           <div class="products-grid">
+              
+           </div>
+      </div>
+    </main>
     <footer>
         <p>&copy; 2023 Elliot Ayd'n. All rights reserved.</p>
     </footer>     
     <script src="scroll-effects.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <div id="modal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <img id="modal-image" src="" alt="Product Image">
-          <h3 id="modal-title">Product Title</h3>
-          <p id="modal-description">Product Description</p>
-          <p class="modal-price">Price: $100</p>
-          <p class="modal-dimensions">Dimensions: 29.7cm x 42cm </p>
-        </div>
-      </div>
-      <script>
-        const artworks = document.querySelectorAll(".artwork");
-        const modal = document.getElementById("modal");
-        const modalImage = document.getElementById("modal-image");
-        const modalTitle = document.getElementById("modal-title");
-        const modalDescription = document.getElementById("modal-description");
-        const closeModal = document.querySelector(".close");
-      
-        artworks.forEach(artwork => {
-          artwork.addEventListener("click", function () {
-            modal.style.display = "block";
-            modalImage.src = this.querySelector("img").src;
-            modalTitle.textContent = this.querySelector("h3").textContent;
-            modalDescription.textContent = this.querySelector("p").textContent;
-          });
-        });
-      
-        closeModal.addEventListener("click", function () {
-          modal.style.display = "none";
-        });
-      
-        window.addEventListener("click", function (event) {
-          if (event.target === modal) {
-            modal.style.display = "none";
-          }
-        });
-      </script>      
-      <script src="cart.js"></script>
-      <script src="shop.js"></script>
-      <script src="load-sketch.js"></script>
+    <script src="cart.js"></script>
+    <script src="shop.js"></script>
+    <script src="load-sketch.js"></script>
+    <script src="etsy-fetch.js"></script>
 </body>
 </html>
