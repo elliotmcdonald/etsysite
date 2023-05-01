@@ -13,6 +13,7 @@ body {
   body {
     background-size: 100% auto !important;
     background-attachment: fixed !important;
+    z-index: -1 !important;
   }
 }
 
