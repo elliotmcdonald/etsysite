@@ -9,13 +9,6 @@ body {
   min-height: 100vh;
 }
 
-@media screen and (max-width: 767px) {
-  body {
-    background-size: 100% auto !important;
-    background-attachment: fixed !important;
-  }
-}
-
 }
 .homepage-header {
     width: 100%;
