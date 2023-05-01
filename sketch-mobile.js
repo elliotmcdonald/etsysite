@@ -36,3 +36,7 @@ function draw() {
   t = t + 0.01; // update time
 }
 
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
